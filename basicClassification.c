@@ -2,8 +2,9 @@
 
 /*This function checks if a given integer (n) is a prime number by checking divisibility with numbers up to its
  square root. It returns 1 (true) if prime, and otherwise 0 (false)*/
-int isPrime(int n){
-    if(n < 1)
+int isPrime(int n)
+{
+    if(n < 1)               /*Prime number is not less than 1 (according to the test files)*/
     {
         return FALSE;
     }
@@ -18,7 +19,7 @@ int isPrime(int n){
         return FALSE;
     }
 
-    int root = mySqrt(n);
+    int root = mySqrt(n);               /*See function in: Auxiliary Functions below*/
     for(int i = 3; i <= root; i += 2)
     {
         if(n % i == 0)
@@ -31,27 +32,38 @@ int isPrime(int n){
 
 /*This number checks if a given integer (n) is a strong number, meaning the sum of the factorials
  of its digits equals the number itself. It returns 1 (true) if strong, and otherwise 0 (false)*/
-int isStrong(int n){
+int isStrong(int n)
+{
+    if (n < 0)
+    {
+        return FALSE;      /*Strong numbers must be non-negative*/
+    }
     int sum = 0;
     int originalN = n;
 
     while(n > 0)
     {
-        int lsdDigit  = n % 10;
-        sum += factorial(lsdDigit);
+        int lsd  = n % 10;         /*lst means Last Significant Digit*/
+        sum += factorial(lsd);     /*See function in: Auxiliary Functions below*/
         n /= 10;
     }
     return originalN == sum;
 }
 
-///////// Auxiliary Function /////////
+///////// Auxiliary Functions /////////
 
-/*This function calculates the factorial of a given integer (n) by using an iterative approach.
+/*This function calculates recursively the factorial of a given integer (n) by using an iterative approach.
  It returns the factorial value as a long long*/
-long long factorial(int n){
+long long factorial(int n)
+{
+    if (n < 0)              /*Factorial of negative numbers is not defined*/        
+    {
+        return FALSE;           
+    }
+
     if(n == 0 || n == 1)
     {
-        return 1;
+        return TRUE;
     }   
     return n * factorial(n - 1);
 }   
@@ -60,9 +72,13 @@ long long factorial(int n){
  using the binary search method. It returns the integer part of the square root.*/
 int mySqrt(double n)
 {
+    if (n < 0) 
+    {
+        return FALSE;       /*Square root of negative numbers is not defined*/ 
+    }
     if(n == 0 || n == 1)
     {
-        return 0;
+        return n;
     }
     int start = 1;
     int end = n;

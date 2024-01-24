@@ -1,17 +1,19 @@
-#Shortcuts
+# Shortcuts
 CC = gcc
 AR = ar
 FLAGS = -Wall -g
-OBJECTS_BASIC = basicClassification.o
-OBJECTS_LOOP = advancedClassificationLoop.o
-OBJECTS_RECURSIVE = advancedClassificationRecursion.o
-OBJECTS_MAIN = main.o
 
 # Source and header dependencies
 SRC_LOOP = advancedClassificationLoop.c
 SRC_BASIC = basicClassification.c
 SRC_RECURSIVE = advancedClassificationRecursion.c
 HEADER_FILE = NumClass.h
+
+# Object files
+OBJECTS_BASIC = basicClassification.o
+OBJECTS_LOOP = advancedClassificationLoop.o
+OBJECTS_RECURSIVE = advancedClassificationRecursion.o
+OBJECTS_MAIN = main.o
 
 # Default target: compile all libraries and programs
 all: loops recursives loopd recursived mains maindloop maindrec
