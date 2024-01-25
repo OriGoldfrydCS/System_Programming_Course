@@ -64,7 +64,7 @@ int armstrongSum(int shorterNumber,int n){
 }
 
 /*This function recursively computes base raised to the power of exp.*/
-long long myPowRec(int base, int exp) {
+long myPowRec(int base, int exp) {
     if (exp == 0) {
         return 1;
     }

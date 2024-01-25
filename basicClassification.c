@@ -4,7 +4,7 @@
  square root. It returns 1 (true) if prime, and otherwise 0 (false)*/
 int isPrime(int n)
 {
-    if(n < 1)               /*Prime number is not less than 1 (according to the test files)*/
+    if(n < 1)               /*Prime number is not less than 1 (according to the test files given)*/
     {
         return FALSE;
     }
@@ -54,7 +54,7 @@ int isStrong(int n)
 
 /*This function calculates recursively the factorial of a given integer (n) by using an iterative approach.
  It returns the factorial value as a long long*/
-long long factorial(int n)
+long factorial(int n)
 {
     if (n < 0)              /*Factorial of negative numbers is not defined*/        
     {

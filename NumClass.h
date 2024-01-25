@@ -11,8 +11,8 @@ int isArmstrong(int);
 // Declarations for auxiliary functions within the functions above
 int numberOfDigits(int);
 int myPow(int, int);
-long long myPowRec(int, int);
-long long factorial(int);
+long myPowRec(int, int);
+long factorial(int);
 int mySqrt(double);
 int armstrongSum(int,int);
 int assistanceFun(int, int);

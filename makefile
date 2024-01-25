@@ -1,4 +1,4 @@
-# Shortcuts
+# General Macros
 CC = gcc
 AR = ar
 FLAGS = -Wall -g
@@ -18,18 +18,18 @@ OBJECTS_MAIN = main.o
 # Default target: compile all libraries and programs
 all: loops recursives loopd recursived mains maindloop maindrec
 
-# Object file rules
+# Object file compiling rules
 $(OBJECTS_MAIN): main.c $(HEADER_FILE)
-	$(CC) $(FLAGS) -c main.c
+	$(CC) $(FLAGS) -c main.c $(HEADER_FILE)
 
 $(OBJECTS_BASIC): $(SRC_BASIC) $(HEADER_FILE)
-	$(CC) $(FLAGS) -c $(SRC_BASIC) -fPIC
+	$(CC) $(FLAGS) -c $(SRC_BASIC) $(HEADER_FILE) -fPIC
 
 $(OBJECTS_LOOP): $(SRC_LOOP) $(HEADER_FILE)
-	$(CC) $(FLAGS) -c $(SRC_LOOP) -fPIC
+	$(CC) $(FLAGS) -c $(SRC_LOOP) $(HEADER_FILE) -fPIC
 
 $(OBJECTS_RECURSIVE): $(SRC_RECURSIVE) $(HEADER_FILE)
-	$(CC) $(FLAGS) -c $(SRC_RECURSIVE) -fPIC
+	$(CC) $(FLAGS) -c $(SRC_RECURSIVE) $(HEADER_FILE) -fPIC
 
 # Static library that contains loop implementation
 loops: libclassloops.a
@@ -53,7 +53,7 @@ libclassrec.so: $(OBJECTS_RECURSIVE) $(OBJECTS_BASIC)
 
 # Main program that linked to the recursive library
 mains: $(OBJECTS_MAIN) libclassrec.a
-	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libclassrec.a 
+	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) ./libclassrec.a 
 
 # Main program that linked to the dynamic library (loops)
 maindloop: $(OBJECTS_MAIN) libclassloops.so
@@ -66,4 +66,4 @@ maindrec: $(OBJECTS_MAIN) libclassrec.so
 
 # Clean-up
 clean:
-	rm -f *.o *.a *.so mains maindloop maindrec
+	rm -f *.o *.a *.so *.gch mains maindloop maindrec
