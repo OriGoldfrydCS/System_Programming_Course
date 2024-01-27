@@ -41,14 +41,14 @@ int assistanceFun(int n, int reverse)
 /*This function recursively counts the number of digits in an integer n.*/
 int numberOfDigits(int n)
 {
-    if(n == 0)
-    {
-        return 1;
-    }
-
     if (n < 0)                  /*Convert negative numbers to positive. We should not do that process in this assigment since n are not less than one*/
     {                           /*This check is added for future needs of that function (it will be necessary), and reuse of code*/
         n = -n;            
+    }
+
+    if(n == 0)
+    {
+        return 1;
     }
     
     return 1 + numberOfDigits(n / 10);
@@ -72,7 +72,7 @@ long myPowRec(int base, int exp)
     if (exp == 0) {
         return 1;
     }
-    long long halfPow = myPowRec(base, exp / 2);  /*Divide the exponent by 2 and call he function with this halved exponent*/
+    long halfPow = myPowRec(base, exp / 2);  /*Divide the exponent by 2 and call he function with this halved exponent*/
     if (exp % 2 == 0) {
         return halfPow * halfPow;                 /*If the exponent is even -> return halfPow * halfPow. For example: 3^4 = (3^2)^2 = 81*/
     }
