@@ -41,15 +41,16 @@ int assistanceFun(int n, int reverse)
 /*This function recursively counts the number of digits in an integer n.*/
 int numberOfDigits(int n)
 {
-    if (n < 0)                  /*Convert negative numbers to positive. We should not do that process in this assigment since n are not less than one*/
-    {                           /*This check is added for future needs of that function (it will be necessary), and reuse of code*/
-        n = -n;            
-    }
-
     if(n == 0)
     {
         return 1;
     }
+
+    if (n < 0)                  /*Convert negative numbers to positive. We should not do that process in this assigment since n are not less than one*/
+    {                           /*This check is added for future needs of that function (it will be necessary), and reuse of code*/
+        n = -n;            
+    }
+    
     return 1 + numberOfDigits(n / 10);
 }
 
