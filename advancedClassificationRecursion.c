@@ -43,7 +43,7 @@ int numberOfDigits(int n)
 {
     if(n == 0)
     {
-        return 1;
+        return 0;
     }
 
     if (n < 0)                  /*Convert negative numbers to positive. We should not do that process in this assigment since n are not less than one*/
