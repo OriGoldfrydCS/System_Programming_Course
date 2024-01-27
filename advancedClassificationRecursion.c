@@ -35,7 +35,7 @@ int assistanceFun(int n, int reverse)
         return reverse;
     }
     return assistanceFun(n / 10, (n % 10) + (reverse * 10));        /*We recursively call that functio without the lsd of n,
-                                                                     and the sum of the lsd and the reverse number multiplied by 10 to increase the number in check*/
+                                                                    and the sum of the lsd and the reverse number multiplied by 10 to increase the number in check*/
 }
 
 /*This function recursively counts the number of digits in an integer n.*/

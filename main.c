@@ -4,11 +4,10 @@
 /*Main program*/
 int main(){
     int n1, n2;
-  
+
     scanf("%d %d", &n1, &n2);
 
-
-    if(n1 > n2)             // A check in case that the user inserts his integers in a reverse order
+    if(n1 > n2)             // A check in case that the user inserts his numbers in a reverse order
     {
         int tmp;
         tmp = n1;
