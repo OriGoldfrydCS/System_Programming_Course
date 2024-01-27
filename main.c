@@ -4,6 +4,8 @@
 /*Main program*/
 int main(){
     int n1, n2;
+
+    printf("Please insert two non-negative numbers: ");
     scanf("%d %d", &n1, &n2);
 
     if(n1 > n2)             // A check in case that the user inserts his numbers in a reverse order

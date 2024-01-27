@@ -13,8 +13,8 @@ int isPalindrome (int n)
     int originalN = n;
     while(n > 0)
     {
-        int lsd = n % 10;
-        reverseNumber = (reverseNumber * 10) + lsd;     /*lst means Last Significant Digit*/
+        int lsd = n % 10;                               /*lsd means Last Significant Digit*/
+        reverseNumber = (reverseNumber * 10) + lsd;     
         n /= 10;
     }
     return reverseNumber == originalN;  
@@ -49,7 +49,7 @@ int isArmstrong(int n)
 int numberOfDigits(int n)
 {
     if (n < 0)                  /*Convert negative numbers to positive. We should not do that process in this assigment since n are not less than one*/
-    {                           /*This check is added for future needs of that function (it will be necessary), and reuse of code*/
+    {                           /*This check is added for future needs of that function (if will be necessary), and reuse of code*/
         n = -n;            
     }
 
@@ -58,7 +58,7 @@ int numberOfDigits(int n)
     {
         counter = 1;
     } 
-    else                        /*Check if the number is not zero -> start counting from zero*/
+    else                        /*Check if the number is not zero -> start counting from 0*/
     {
         counter = 0;
     }

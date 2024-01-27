@@ -80,7 +80,7 @@ int mySqrt(double n)
     {
         return n;
     }
-    int start = 1;
+    int start = 1;          /*Find the root by binary search method*/
     int end = n;
     int result;
 
