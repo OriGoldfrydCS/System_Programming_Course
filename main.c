@@ -1,24 +1,27 @@
-#include<stdio.h>
+#include <stdio.h>
 #include "NumClass.h"
 
 /*Main program*/
 int main(){
     int n1, n2;
-        int isValidInput;
+    int isValidInput;
 
-    while (TRUE) 
+    while(TRUE) 
     {
         isValidInput = scanf("%d %d", &n1, &n2);
 
-        if(isValidInput == 2) {           /*Check if the two inputs are valid was read successfully*/
+        if(isValidInput == 2)      /*Check if the two inputs are valid (means integers) and was read successfully*/
+        {
             break;
-        } else {                          /*Print no results*/
+        } 
+        else                               /*Print empty results*/
+        {                               
             printf("The Armstrong numbers are:");
             printf("The Palindromes are:");
             printf("The Prime numbers are:");
             printf("The Strong numbers are:");
 
-            while(getchar() != '\n');     /*getchar() reads one character at a time from the input buffer, and in that way clear it from user inputs*/
+            while(getchar() != '\n');     /*getchar() reads one character each time from the input buffer, and in that way clear it from user inputs*/
         }
     }
 
