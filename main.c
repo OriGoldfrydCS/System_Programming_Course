@@ -4,7 +4,23 @@
 /*Main program*/
 int main(){
     int n1, n2;
-    scanf("%d %d", &n1, &n2);
+        int isValidInput;
+
+    while (TRUE) 
+    {
+        isValidInput = scanf("%d %d", &n1, &n2);
+
+        if(isValidInput == 2) {           /*Check if the two inputs are valid was read successfully*/
+            break;
+        } else {                          /*Print no results*/
+            printf("The Armstrong numbers are:");
+            printf("The Palindromes are:");
+            printf("The Prime numbers are:");
+            printf("The Strong numbers are:");
+
+            while(getchar() != '\n');     /*getchar() reads one character at a time from the input buffer, and in that way clear it from user inputs*/
+        }
+    }
 
     if(n1 > n2)             // A check in case that the user inserts his numbers in a reverse order
     {
