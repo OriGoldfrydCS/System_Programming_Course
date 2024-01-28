@@ -34,7 +34,7 @@ int isPrime(int n)
  of its digits equals the number itself. It returns 1 (true) if strong, and otherwise 0 (false)*/
 int isStrong(int n)
 {
-    if (n < 0)
+    if (n <= 0)
     {
         return FALSE;      /*Strong numbers must be non-negative*/
     }
