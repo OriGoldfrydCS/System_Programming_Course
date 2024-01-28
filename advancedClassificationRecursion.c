@@ -35,10 +35,8 @@ int assistanceFun(int n, int reverse)
         return reverse;
     }
     return assistanceFun(n / 10, reverse * 10 + (n % 10));        /*We recursively call that functio without the lsd of n,
-                                                                     and the sum of the lsd and the reverse number multiplied by 10 to increase the number in check*/
+                                                                  and the sum of the lsd and the reverse number multiplied by 10 to increase the number in check*/
 }
-
-
 
 /*This function recursively counts the number of digits in an integer n.*/
 int numberOfDigits(int n)
@@ -51,14 +49,15 @@ int numberOfDigits(int n)
 }
 
 /*This function recursively calculates the Armstrong sum of a number, 
- where each digit of shorterNumber is raised to the nth power (using myPowRec)..*/
+ where each digit of shorterNumber is raised to the nth power (using myPowRec).*/
 int armstrongRec(int n, int nDigits) {
     if (n == 0) 
     {
         return 0;
     }
     int digit = n % 10;
-    return myPowRec(digit, nDigits) + armstrongRec(n / 10, nDigits);
+    return myPowRec(digit, nDigits) + armstrongRec(n / 10, nDigits); /*This line returns the power of the lsd of the current n,
+                                                                     and the Armstrong sum of the remaining digits.*/
 }
 
 /*This function recursively computes base raised to the power of exp.*/

@@ -14,7 +14,7 @@ int myPow(int, int);
 long myPowRec(int, int);
 long factorial(int);
 int mySqrt(double);
-int armstrongSum(int,int);
+int armstrongRec(int,int);
 int assistanceFun(int, int);
 
 #endif
