@@ -56,14 +56,14 @@ int isStrong(int n)
  It returns the factorial value as a long long*/
 long factorial(int n)
 {
-    if (n <= 0)              /*Factorial of negative numbers is not defined*/        
+    if (n < 0)              /*Factorial of negative numbers is not defined*/        
     {
         return FALSE;           
     }
 
-    if(n == 1)
+    if(n == 0 || n == 1)
     {
-        return TRUE;
+        return 1;
     }   
     return n * factorial(n - 1);
 }   
@@ -76,7 +76,6 @@ int mySqrt(double n)
     {
         return FALSE;       /*Square root of negative numbers is not defined*/ 
     }
-    
     if(n == 0 || n == 1)
     {
         return n;
