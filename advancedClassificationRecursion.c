@@ -35,7 +35,7 @@ int assistanceFun(int n, int reverse)
         return reverse;
     }
     return assistanceFun(n / 10, (n % 10) + (reverse * 10));        /*We recursively call that functio without the lsd of n,
-                                                                    and the sum of the lsd and the reverse number multiplied by 10 to increase the number in check*/
+                                                                     and the sum of the lsd and the reverse number multiplied by 10 to increase the number in check*/
 }
 
 /*This function recursively counts the number of digits in an integer n.*/
@@ -50,31 +50,30 @@ int numberOfDigits(int n)
     {
         return 1;
     }
-    
     return 1 + numberOfDigits(n / 10);
 }
 
 /*This function recursively calculates the Armstrong sum of a number, 
  where each digit of shorterNumber is raised to the nth power (using myPowRec)..*/
-int armstrongSum(int shorterNumber,int n)
-{
+int armstrongSum(int shorterNumber,int n){
     if(shorterNumber == 0)
     {
         return FALSE;
     }
-    return (int) myPowRec(shorterNumber % 10, n) + armstrongSum(shorterNumber / 10, n); /*Calculate the n power of shorterNumber's lsd and add it to the result*/
-
+    return (int) myPowRec(shorterNumber % 10, n) + armstrongSum(shorterNumber / 10, n);     /*Calculate the n power of shorterNumber's lsd and add it to the result*/    
 }
 
 /*This function recursively computes base raised to the power of exp.*/
-long myPowRec(int base, int exp) 
-{
+long myPowRec(int base, int exp) {
     if (exp == 0) {
         return 1;
     }
-    long halfPow = myPowRec(base, exp / 2);  /*Divide the exponent by 2 and call he function with this halved exponent*/
+    long long halfPow = myPowRec(base, exp / 2);    /*Divide the exponent by 2 and call he function with this halved exponent*/
     if (exp % 2 == 0) {
-        return halfPow * halfPow;                 /*If the exponent is even -> return halfPow * halfPow. For example: 3^4 = (3^2)^2 = 81*/
+        return halfPow * halfPow;                   /*If the exponent is even -> return halfPow * halfPow. For example: 3^4 = (3^2)^2 = 81*/
     }
-    return base * halfPow * halfPow;              /*If the exponent is odd -> return base * halfPow * halfPow. For exampe: 2^3 = 2 * (2^(3-1)/2)^2 = 2 * (2^1)^2 = 2 * 4 = 8*/
+    return base * halfPow * halfPow;                /*If the exponent is odd -> return base * halfPow * halfPow. For exampe: 2^3 = 2 * (2^(3-1)/2)^2 = 2 * (2^1)^2 = 2 * 4 = 8*/
 }
+
+
+
